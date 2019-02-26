@@ -29,7 +29,7 @@ function! Tabline()
     let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' ' . tab .':'
     let s .= (bufname != '' ? ''. fnamemodify(bufname, ':t') . ' ' : 'No Name ')
-    let s .= '%{WebDevIconsGetFileTypeSymbol()} '
+    let s .= (tab == tabpagenr() ? '%{WebDevIconsGetFileTypeSymbol()} ' : '')
 
     if bufmodified
       let s .= '[+] '
